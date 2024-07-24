@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Encryptor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left section for input and buttons -->
+      <div class="left-section">
+        <!-- Textarea to enter the text to encrypt/decrypt -->
+        <textarea
+          id="input-text"
+          placeholder="Ingrese el texto aquí"
+        ></textarea>
+        <!-- Additional information on allowed text -->
+        <div class="info">
+          <p>Only lowercase letters and no accents</p>
+        </div>
+        <!-- Action Buttons: Encrypt and Decrypt -->
+        <div class="buttons">
+          <button id="encrypt-btn">Encrypt</button>
+          <button id="decrypt-btn">Decrypt</button>
+        </div>
+      </div>
+      <!-- Right section to display the resulting text and the copy button -->
+      <div class="right-section">
+        <!-- Textarea to display encrypted/decrypted text -->
+        <textarea id="output-text" readonly></textarea>
+        <!-- Button to copy the resulting text -->
+        <button id="copy-btn">Copy</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
