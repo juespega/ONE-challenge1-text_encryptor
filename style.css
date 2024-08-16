@@ -1,113 +1,116 @@
-/* Basic body styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #e8ebf3;
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+    --primary-color: #F3F5FC;
+    --secundary-color: #0a3871;
+    --tertiary-color: #D8DFE8;
+    --quaternary-color: #FFFFFF;
+
+    --font-inter:'Inter', sans-serif;
+}
+
+*{
+    background-color: var(--primary-color);
+    font-family: var(--font-inter);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.header {
+    padding: 2% 0% 0% 2%;
+}
+
+.logo{
+    width: 10%;
+}
+
+/* main{
     display: flex;
-    justify-content: center;
+    margin-bottom: 10px;
+    margin-left: 180px;
+
+} */
+
+.presentation {
+    display: flex;
     align-items: center;
-    height: 100vh;
-}
-
-/* Main container */
-.container {
-    display: flex;
-    background-color: #f5f7fb;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    max-width: 900px;
-    width: 100%;
-}
-
-/* Left and right sections */
-.left-section, .right-section {
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    /* padding: 5% 15%; */
     justify-content: space-between;
+    gap: 82;
 }
 
-/* Left section style */
-.left-section {
-    background-color: #f0f4f8;
-}
-
-/* Style of textareas */
-textarea {
-    width: 100%;
-    height: 300px;
-    padding: 15px;
+.text-area{
     border: none;
-    border-radius: 5px;
-    resize: none;
-    font-size: 16px;
+    color: #0a3871;
+    margin-top: 30px;
+    padding: 2px;
+    text-transform: lowercase;
 }
-
-/* Remove blue border when focusing textarea */
-textarea:focus {
+::placeholder{
+    color:#0a3871;
+}
+.text-area:focus{
     outline: none;
 }
 
-/* Additional Information */
-.info {
-    margin-top: 10px;
-    color: #6c757d;
-    font-size: 14px;
-}
-
-/* Button container */
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-/* Button style */
-button {
-    padding: 10px 20px;
+.mensaje{
+    background: white;
+    background-image: url("assets/Muneco.png");
+    background-repeat: no-repeat;
     border: none;
-    border-radius: 5px;
+    border-radius: 24px;
+    color: #0a3871;
+    margin-left: 98px;
+    margin-top: 60px;
+    padding-left: 20px;
+    position: fixed;
+    background-position: center;
+}
+.mensaje:focus{
+    outline: none;
+}
+
+.botones{
+    display: flex;
+    margin-top: 18px;
+}
+
+.btn-desencriptar{
+    background-color: #D8DFE8;
+    border: 1px solid #0a3871;
+    border-radius: 24px;
+    color: #0a3871;
     cursor: pointer;
-    font-size: 16px;
+    height: 67px;
+    margin-left: 30px;
+    width: 328px;
 }
 
-/* Encrypt Button Style */
-#encrypt-btn {
-    background-color: #007bff;
+.btn-encriptar{
+    background-color: #0a3871;
+    border: 1px solid #0a3871;
+    border-radius: 24px;
     color: white;
+    cursor: pointer;
+    height: 67px;
+    width: 328px;
 }
 
-/* Decrypt Button Style */
-#decrypt-btn {
-    background-color: #6c757d;
-    color: white;
+.btn-copiar{
+    border: 1px solid #0a3871;
+    border-radius: 24px;
+    color: #0a3871;
+    cursor: pointer;
+    height: 67px;
+    margin-left: 108px;
+    margin-top: 402px;
+    position: absolute;
+    width: 336px;
+    position: fixed;
+    background-position: center;
 }
 
-/* Copy Button Style */
-#copy-btn {
-    align-self: flex-end;
-    background-color: #28a745;
-    color: white;
-}
-
-/* Responsive styles for mobile devices */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    textarea {
-        height: 150px;
-    }
-
-    .buttons {
-        flex-direction: column;
-    }
-
-    button {
-        margin-bottom: 10px;
-    }
+.informacion{
+    color: #495057;
+    font-size: 18px;
 }

@@ -1,38 +1,59 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Text Encryptor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <!-- Left section for input and buttons -->
-      <div class="left-section">
-        <!-- Textarea to enter the text to encrypt/decrypt -->
-        <textarea
-          id="input-text"
-          placeholder="Ingrese el texto aquí"
-        ></textarea>
-        <!-- Additional information on allowed text -->
-        <div class="info">
-          <p>Only lowercase letters and no accents</p>
+    <header>
+        <div class="container">
+            <div class="header__logo">
+                <img class="logo" src="/assets/Logo.png" alt="alura logo">
+            </div>
         </div>
-        <!-- Action Buttons: Encrypt and Decrypt -->
-        <div class="buttons">
-          <button id="encrypt-btn">Encrypt</button>
-          <button id="decrypt-btn">Decrypt</button>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="encrypter">
+                <form action="" class="encrypter__form">
+                    <div class="enter__text">
+                        <textarea name="enter_text_here" id="text" placeholder="Enter text here" required></textarea>
+                        <div class="text__information">
+                            <div class="information">
+                                <p><i class="fas fa-exclamation-circle"></i>Only lowercase letters and no accents</p>
+                            </div>
+                            <div class="text__buttons">
+                                <input id="encrypt" type="button" value="Encrypt">
+                                <input id="decrypt" type="button" value="Decrypt">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="output__text">
+                    <div class="output__content">
+                        <div class="content" id="default">
+                            <div class="output__text__img">
+                                <img src="./assets/Muneco.png" alt="image of a person">
+                            </div>
+                            <p>No messages were found</p>
+                            <p>Enter the text you want to encrypt or decrypt.</p>
+                        </div>
+                        <div class="invisible__content" id="result">
+                            <textarea name="output_text" id="out_text" disabled></textarea>
+                            <button id="copy">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- Right section to display the resulting text and the copy button -->
-      <div class="right-section">
-        <!-- Textarea to display encrypted/decrypted text -->
-        <textarea id="output-text" readonly></textarea>
-        <!-- Button to copy the resulting text -->
-        <button id="copy-btn">Copy</button>
-      </div>
-    </div>
-    <script src="app.js"></script>
-  </body>
+    </main>
+    <footer class="footer">
+    </footer>
+<script src="app.js"></script>
+</body>
 </html>
