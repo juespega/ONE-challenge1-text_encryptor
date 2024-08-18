@@ -60,6 +60,18 @@ function btnDecrypt() {
   const encryptText = decrypt(inputText.value);
   outputText.value = encryptText;
   inputText.value = "";
+
+  // Ocultar la imagen
+  const imgElement = document.querySelector(".output__text__img img");
+  if (imgElement) {
+    imgElement.style.display = "none";
+  }
+
+  // Ocultar las etiquetas <p> dentro de la clase "content"
+  const paragraphs = document.querySelectorAll(".content p");
+  paragraphs.forEach((p) => {
+    p.style.display = "none";
+  });
 }
 
 // Función que realiza la desencriptación de acuerdo al patrón inverso
