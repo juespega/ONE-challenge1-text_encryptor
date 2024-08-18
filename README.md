@@ -9,7 +9,6 @@ Text Encryptor is a simple web application that allows users to encrypt and decr
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [How It Works](#how-it-works)
-- [License](#license)
 
 ## Features
 
