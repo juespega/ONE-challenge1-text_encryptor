@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root{
+    /* Variables para los colores y la fuente principal */
     --primary-color: #F3F5FC;
     --secundary-color: #0a3871;
     --tertiary-color: #D8DFE8;
     --quaternary-color: #FFFFFF;
+    --quinary-color: #000000;
+    --sextenaty-color: #495057;
 
     --font-inter:'Inter', sans-serif;
 }
 
+/* Estilos básicos para el cuerpo del documento */
 body{
     height: 100%;
     background-color: var(--primary-color);
@@ -17,6 +21,7 @@ body{
     font-size: 1.5rem;
 }
 
+/* Estilos para la clase container */
 .container{
     width: 100%;
     height: 100%;
@@ -24,6 +29,7 @@ body{
     margin:auto;
 }
 
+/* Estilos para la sección del logo en el encabezado */
 .header__logo {
     position:absolute;
 }
@@ -33,14 +39,16 @@ body{
     position: relative;
     left: 40px;
     top: 40px;
-/*     /* width: 31.09px;
-    height: 48px; */ */
+/* width: 31.09px;
+    height: 48px; */
 }
 
+/* Estilos para la sección main */
 main{
     height: 100%;
 }
 
+/* Estilos para el contenedor del encriptador */
 .encrypter{
     margin: 0 40px;
     width: 100%;
@@ -49,10 +57,12 @@ main{
     justify-content: center;
 }
 
+/* Estilos para el formulario del encriptador */
 .encrypter__form{
     flex-basis: calc(65% - 80px);
 }
 
+/* Estilos para el área de entrada de texto */
 .enter__text{
     height: 100%;
     display: flex;
@@ -76,10 +86,12 @@ main{
     outline: none;
 }
 
+/* Estilos para los placeholders */
 .text_in > textarea::-webkit-input-placeholder{
     color: var(--secundary-color);
 }
 
+/* Estilos para la sección de información y botones */
 .text__information{
     width: 100%;
     margin-bottom: 72px;
@@ -97,9 +109,10 @@ main{
     display: inline-block;
     font-size: 0.75rem;
     line-height: 18px;
-    color: #495057;
+    color: var(--sextenaty-color);
 }
 
+/* Estilos para los botones */
 .text__buttons{
     display: flex;
     width: 100%;
@@ -119,12 +132,12 @@ main{
 .text__buttons > input:first-child{
     margin-right: 12px;
     background-color: var(--secundary-color);
-    color: white;
+    color: var(--quaternary-color);
 }
 
 .text__buttons > input:first-child:active{
-    color: white;
-    background-color: black;
+    color: var(--quaternary-color);
+    background-color: var(--quinary-color);
 }
 
 .text__buttons > input:last-child{
@@ -134,10 +147,11 @@ main{
 }
 
 .text__buttons > input:last-child:active{
-    color: white;
-    background-color: black;
+    color:var(--quaternary-color);
+    background-color: var(--quinary-color);
 }
 
+/* Estilos para la sección de salida del texto */
 .output__text{
     margin: 40px 40px;
     flex-basis: calc(35% - 80px);
@@ -146,13 +160,14 @@ main{
 .output__content{
     position: relative;
     height: 100%;
-    background-color:white;
+    background-color:var(--quaternary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 32px;
 }
 
+/* Estilos para el contenido de la salida */
 .content{
     height: 100%;
     margin: 40px;
@@ -180,6 +195,7 @@ main{
     text-align: center;
 }
 
+/* Estilos para la imagen de salida */
 .output__text__img{
     text-align: center;
 }
@@ -191,17 +207,19 @@ main{
     display: inline-block;
 }
 
+/* Estilos para el textarea de salida */
 #out_text{
     flex-basis: calc(100% - (67px + 32px));
     font-family: Inter, sans-serif;
     font-size: 24px;
     line-height: 36px;
-    color:#495057;
+    color:var(--sextenaty-color);
     background-color: transparent;
     resize: none;
     border: none;
 }
 
+/* Estilos para el botón de copiar */
 #copy{
     height: 67px;
     margin-top: 32px;
@@ -216,10 +234,124 @@ main{
 }
 
 #copy:last-child:active{
-    color: white;
-    background-color: black;
+    color: var(--quaternary-color);
+    background-color: var(--quinary-color);
 }
 
 /* .invisible{
     display: none;
 } */
+
+/* @media queries para la responsividad */
+
+/* Estilos cuando la altura de la pantalla es menor a 600px */
+@media screen and (max-height: 600px){
+    .output__text__img > img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Estilos cuando el ancho de la pantalla es menor a 500px */
+@media screen and (max-width: 500px){
+    .output__content__img > img{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Estilos cuando el ancho de la pantalla es menor a 900px */
+@media screen and (max-width: 900px){
+    .encrypter{
+        height: 300vh;
+        flex-direction: column;
+        width: calc(100% - 80px);
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .encrypter__form{
+        margin: 0;
+        width: calc(100% - 80px);
+        flex-basis: 50%;
+    }
+
+    .enter__text > textarea{
+        height: 700px;
+    }
+
+    .text__information{
+        margin-bottom: 0;
+    }
+
+    .output__text{
+        margin: 40px 40px;
+        width: calc(100% - 80px);
+        flex-basis: 50%;
+    }
+
+    .output__text__img > img{
+        display: none;
+    }
+
+    .content > p:nth-child(2){
+        margin-top: 0;
+    }
+
+    .content > p:nth-child(3){
+        margin-top: 16px;
+    }
+}
+
+/* Estilos cuando el ancho de la pantalla es menor a 400px */
+@media screen and (max-width: 400px){
+    .encrypter{
+        margin: 0 16px;
+        width: calc(100% - 32px);
+    }
+
+    .output__text{
+        width: calc(100% - 32px);
+    }
+
+    .text__buttons{
+        flex-direction: column;
+    }
+
+    .text__buttons > input{
+        flex-basis: 50%;
+        padding: 23px 0
+    }
+
+    .text__buttons > input:first-child{
+        margin-right: 0;
+        margin-bottom: 12px;
+    }
+
+    .text__buttons > input:last-child{
+        margin-top: 12px;
+        margin-left: 0;
+    }
+
+}
+
+/* Estilos para el pie de página */
+.footer{
+    margin: 1m 0 0 0;
+    padding: 10px 0;
+    font-size: 1.rem;
+    color:var(--quinary-color);
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Ajustes en el pie de página para pantallas pequeñas */
+@media screen and (max-width: 400px) {
+    .footer {
+        font-size: 0.5rem;
+    }
+}
