@@ -1,59 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Metadata básica del documento HTML -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Text Encryptor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Enlace a las hojas de estilo y fuentes externas -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Sección de la cabecera con el logo -->
     <header>
-        <div class="container">
-            <div class="header__logo">
-                <img class="logo" src="/assets/Logo.png" alt="alura logo">
-            </div>
+      <div class="container">
+        <div class="header__logo">
+          <img class="logo" src="/assets/Logo.png" alt="alura logo" />
         </div>
+      </div>
     </header>
-
+    <!-- Sección principal que contiene el formulario de encriptación -->
     <main>
-        <div class="container">
-            <div class="encrypter">
-                <form action="" class="encrypter__form">
-                    <div class="enter__text">
-                        <textarea name="enter_text_here" id="text" placeholder="Enter text here" required></textarea>
-                        <div class="text__information">
-                            <div class="information">
-                                <p><i class="fas fa-exclamation-circle"></i>Only lowercase letters and no accents</p>
-                            </div>
-                            <div class="text__buttons">
-                                <input id="encrypt" type="button" value="Encrypt">
-                                <input id="decrypt" type="button" value="Decrypt">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-                <div class="output__text">
-                    <div class="output__content">
-                        <div class="content" id="default">
-                            <div class="output__text__img">
-                                <img src="./assets/Muneco.png" alt="image of a person">
-                            </div>
-                            <p>No messages were found</p>
-                            <p>Enter the text you want to encrypt or decrypt.</p>
-                        </div>
-                        <div class="content invisible" id="result">
-                            <textarea name="output_text" id="out_text" disabled></textarea>
-                            <button id="copy">Copy</button>
-                        </div>
-                    </div>
+      <div class="container">
+        <div class="encrypter">
+          <form action="" class="encrypter__form">
+            <div class="enter__text">
+              <textarea
+                name="enter_text_here"
+                id="text"
+                placeholder="Enter text here"
+                required
+              ></textarea>
+              <div class="text__information">
+                <div class="information">
+                  <p>
+                    <i class="fas fa-exclamation-circle"></i>Only lowercase
+                    letters and no accents
+                  </p>
                 </div>
+                <div class="text__buttons">
+                  <input
+                    id="encrypt"
+                    type="button"
+                    value="Encrypt"
+                    onclick="btnEncrypt()"
+                  />
+                  <input
+                    id="decrypt"
+                    type="button"
+                    value="Decrypt"
+                    onclick="btnDecrypt()"
+                  />
+                </div>
+              </div>
             </div>
+          </form>
+          <!-- Sección para mostrar el texto encriptado/desencriptado -->
+          <div class="output__text">
+            <div class="output__content">
+              <div class="content" id="default">
+                <div class="output__text__img">
+                  <img src="./assets/Muneco.png" alt="image of a person" />
+                </div>
+                <p>No messages were found</p>
+                <p>Enter the text you want to encrypt or decrypt.</p>
+              </div>
+              <!-- Contenido que muestra el resultado -->
+              <div class="content invisible" id="result">
+                <textarea name="output_text" id="out_text" disabled></textarea>
+                <button id="copy" onclick="btnCopy()">Copy</button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
-    <footer class="footer">
-    </footer>
-<script src="app.js"></script>
-</body>
+    <footer class="footer"></footer>
+    <!-- Enlace al archivo JavaScript principal -->
+    <script src="app.js"></script>
+  </body>
 </html>
